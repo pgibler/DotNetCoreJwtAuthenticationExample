@@ -25,6 +25,7 @@ dotnet run
 
 5. Copy the value from the `access_token` parameter.
 6. Utilizing an HTTP request tool, create a request with the following parameters and execute it.
+    * Set the `Authentication` header equal to `Bearer <access_token>` where `access_token` is the value you copied from step 5.
 
     ![Authenticated GET request example](/Media/authenticated_request.png?raw=true "An example authenticated GET request using the bearer token to authenticate the request server side.")
 
