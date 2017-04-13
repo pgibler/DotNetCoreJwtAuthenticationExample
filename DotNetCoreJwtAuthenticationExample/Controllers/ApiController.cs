@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 
 namespace DotNetCoreJwtAuth.Controllers
@@ -7,9 +6,9 @@ namespace DotNetCoreJwtAuth.Controllers
     [Route("api")]
     public class ApiController : Controller
     {
-        // GET api/app
+        // GET api/service
         [HttpGet]
-        [Route("get_values")]
+        [Route("service")]
         [Authorize]
         public string Get()
         {

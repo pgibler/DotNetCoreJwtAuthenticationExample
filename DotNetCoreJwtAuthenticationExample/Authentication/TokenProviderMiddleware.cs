@@ -86,17 +86,18 @@ namespace DotNetCoreJwtAuthenticationExample
             await context.Response.WriteAsync(JsonConvert.SerializeObject(response, new JsonSerializerSettings { Formatting = Formatting.Indented }));
         }
 
-        // IMPORTANT This function is what validates the users credentials.
+        // IMPORTANT This function is what checks the users credentials and returns the claims they have.
         //
-        // Replace the conditional here with a secure system using either a database where credentials are stored, OAuth, etc.
+        // In a real-world application, replace the conditional here that returns the ClaimsIdentity with a with a secure system
+        // that can you can check the credentials against. An account system hooked to a persisted database and OAuth are good options here.
         private Task<ClaimsIdentity> GetIdentity(string username, string password)
         {
-            if (username == "TEST" && password == "TEST123")
+            if (username == "admin" && password == "hunter2")
             {
                 return Task.FromResult(new ClaimsIdentity(new GenericIdentity(username, "Token"), new Claim[] { }));
             }
 
-            // Credentials are invalid, or account doesn't exist
+            // If the credential check didn't pass, return no claims.
             return Task.FromResult<ClaimsIdentity>(null);
         }
 
