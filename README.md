@@ -6,6 +6,11 @@
 A simple .NET Web API project that implements server side JWT token creation and validation.
 
 ----
+## Requirements
+
+.NET Core 1.1 - [download](https://www.microsoft.com/net/download/core)
+
+----
 ## Setup
 
 1. Clone the repository
